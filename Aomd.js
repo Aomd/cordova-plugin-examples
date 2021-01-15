@@ -4,8 +4,8 @@ var exec = require('cordova/exec');
 function Aomd() {
 
 }
-
-Aomd.run = function (data, success) {
+// 方法名应与服务名称的方法名对应起来
+Aomd.test = function (data, success) {
   exec(
     success,
     function (errorMessage) {
