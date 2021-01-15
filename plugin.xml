@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-aomd" version="1.1.0">
+  <name>cordova-plugin-aomd</name>
+  <description></description>
+  <license>Apache 2.0</license>
+
+  <js-module src="Aomd.js" name="Aomd">
+    <!-- 将Aomd 挂载在window对象上面 -->
+    <clobbers target="window.Aomd" />
+  </js-module>
+
+  <!-- android -->
+  <platform name="android">
+    <config-file target="res/xml/config.xml" parent="/*">
+      <!-- 服务名称 js exec 调用服务-->
+      <feature name="AomdForCordova">
+        <!-- 安卓对应包路劲 -->
+        <param name="android-package" value="com.aomd.test.AomdPlugin" />
+      </feature>
+    </config-file>
+    <!-- java文件路径 包路劲 -->
+    <source-file src="src/android/AomdPlugin.java" target-dir="src/com/aomd/test" />
+
+  </platform>
+
+
+</plugin>
